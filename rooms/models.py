@@ -54,7 +54,9 @@ class Photo(core_models.AbstractTimeStamp):
 
     caption = models.CharField(max_length=80)
     file = models.ImageField()
-    room = models.ForeignKey("Room", on_delete=models.CASCADE)
+    room = models.ForeignKey(
+        "Room", on_delete=models.CASCADE
+    )  # foreign key: use strings
 
     def __str__(self):
         return self.caption
