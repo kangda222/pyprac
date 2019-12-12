@@ -92,6 +92,10 @@ class Room(core_models.AbstractTimeStamp):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        self.city = str.capitalize(self.city)
+        super().save(*args, **kwargs)  # model을 change 할 때 항상
+
     def total_rating(self):
         all_reviews = self.reviews.all()
         all_ratings = 0
