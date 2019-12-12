@@ -137,3 +137,5 @@ Thumbs.db
 # Editors
 .vscode/
 .idea/
+
+uploads/
